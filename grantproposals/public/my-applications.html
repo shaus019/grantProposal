@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html ng-app="GrantApp">
+    <head>
+        <title>Upload Proposal</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="js/angular.min.js"></script>
+        <script src="js/angular-resource.min.js"></script>
+        <script src="js/ngStorage.min.js"></script>
+        <script src="js/grant.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+        <link rel = "stylesheet" type = "text/css" href = "css/style.css" />
+    </head>
+    <body>
+        <h1>My applications</h1>
+        <div id="grantList">
+        <table  ng-controller="ApplicationController as appCtrl" ng-init="appCtrl.retreiveApplications()">
+            <tr>
+                <th>Application ID</th>
+                <th>Grant ID</th>
+                <th>Date</th>
+                <th>Project Title</th>
+                <th>Status</th>
+                <th></th>
+            </tr>
+            <tr ng-repeat="application in appCtrl.myApplications">
+                <td>{{application.applicationId}}</td>
+                <td>{{application.grant.grantId}}</td>
+                <td>{{application.date}}</td>
+                <td>{{application.projectTitle}}</td>
+                <td>{{application.status}}</td>
+                <td ng-controller="ProposalController as propCtrl">  
+                    <button id="apply" ng-click="propCtrl.selectApplicationProposalUpload(application.applicationId)">Upload Proposal</button>
+                </td>
+            </tr>                       
+        </table>
+        </div>
+    </body>
+</html>

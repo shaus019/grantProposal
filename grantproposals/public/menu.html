@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<!--menu-->
+<html ng-app="GrantApp">
+    <head>
+        <title>Home Page</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="js/angular.min.js"></script>
+        <script src="js/angular-resource.min.js"></script>
+        <script src="js/ngStorage.min.js"></script>
+        <script src="js/grant.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+        <link rel = "stylesheet" type = "text/css" href = "css/style.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        
+    </head>
+    <body >
+
+
+
+        
+                <div id="menu">
+
+            <a href="." > <i class="fa fa-home">  Home </i></a>
+            <div  ng-controller="ApplicantController as appCtrl" ng-init="appCtrl.checkSignIn()">
+                <div ng-controller="EvaluatorController as evaCtrl"  ng-init="evaCtrl.checkSignIn()" >
+                    <p id="welcome" ng-if="appCtrl.signedIn" > <i class="fa fa-user"> {{appCtrl.welcomeApplicant}}  </i></p>
+                    <a href="grants.html" ng-if="appCtrl.signedIn">Grants</a>
+                    <a href="my-applications.html" ng-if="appCtrl.signedIn">My Applications</a>
+                    <a href="#" ng-if="appCtrl.signedIn" ng-click="appCtrl.signOut()">Sign Out</a>
+                    <a href="signin-applicant.html" ng-if="!appCtrl.signedIn && !evaCtrl.signedIn" >Sign In As Applicant</a>
+
+
+                    <p id="welcome" ng-if="evaCtrl.signedIn"> <i class="fa fa-user"> {{evaCtrl.welcomeEvaluator}}  </i></p>
+                    <a href="view_grants.html" ng-if="evaCtrl.signedIn">View Grants</a>
+                    <a href="#" ng-if="evaCtrl.signedIn" ng-click="evaCtrl.signOut()">Sign Out</a>
+                    <a href="signin-evaluator.html" ng-if="!evaCtrl.signedIn && !appCtrl.signedIn"  >Sign In As Evaluator</a>
+
+                    </div>
+            </div>
+        </div>
+        <div id="separater"></div>
+
+        
+        
+    </body>
+</html>

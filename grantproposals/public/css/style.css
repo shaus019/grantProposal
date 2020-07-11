@@ -1,0 +1,251 @@
+
+/* 
+    Created on : 8/05/2020, 9:45:01 pm
+    Author     : fangzhou
+*/
+
+body {
+    margin: 0 auto;
+    text-align: center;
+    background-image: url("/images/background.jpg");
+
+    background-size: cover;
+    font-family: Georgia, serif;
+}
+
+#menu {
+    overflow: hidden;
+    background-color: #0c3787;
+}
+
+#menu a {
+    float: left;
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 20px;
+    text-decoration: none;
+}
+
+#welcome{
+    
+    float: right;
+    color: white;
+    text-align: center;
+    font-size: 95%;
+}
+
+
+#menu a:hover {
+    background-color: #ecb401;
+    color: black;
+}
+
+#separater {
+    height: 10px;
+    background-color: #ecb401;
+}
+
+
+
+input[type=text], [type=password],[type=date], [type=email]{
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+input[type=text], [type=password]::placeholder {  
+
+    /* Firefox, Chrome, Opera */ 
+    text-align: center;
+    font-size: 15px;
+}
+
+button[type=submit]{
+    width: 100%;
+    font-family: Georgia, serif;
+    background-color: #ecb401;
+    color: black;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: 5px solid;
+    border-color: #d19d01;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 20px;
+    border-bottom-left-radius: 30px;
+    border-top-right-radius: 30px;
+    border-bottom-right-radius: 30px; 
+    border-top-left-radius: 30px;
+}
+
+button[type=submit]:hover {
+    background-color: #d19d01;
+}
+
+input[type=submit],.goBack{
+    width: 65%;
+    height:100%;
+    font-family: Georgia, serif;
+    background-color: #ecb401;
+    color: black;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: 5px solid;
+    border-color: #d19d01;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 20px;
+    border-bottom-left-radius: 30px;
+    border-top-right-radius: 30px;
+    border-bottom-right-radius: 30px; 
+    border-top-left-radius: 30px;
+}
+
+input[type=submit],.goBack:hover {
+    background-color: #d19d01;
+}
+
+#signin {
+    margin: 0 auto;
+    height: 380px;
+    width: 800px;
+    border-radius: 5px;
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px; 
+    background-color: #000066;
+    padding: 20px;
+    color: white;
+  }
+  
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th, td {
+  padding: 8px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+tr:hover {background-color:#000080;}
+
+#apply{
+    width: 100%;
+    height: 70%;
+    font-family: Georgia, serif;
+    background-color: #ecb401;
+    color: black;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: 5px solid;
+    border-color: #d19d01;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 15px;
+    border-bottom-left-radius: 20px;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px; 
+    border-top-left-radius: 20px;
+}
+
+#apply:hover {
+    background-color: #d19d01;
+}
+
+
+
+#grantList {
+    margin: 0 auto;
+    height: auto;
+    width: 800px;
+    border-radius: 5px;
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px; 
+    background-color: #000066;
+    padding: 20px;
+    color: #ffffff;
+    word-wrap: break-word;
+}
+
+#filter {
+    width: 20px;
+    height: 10px;
+    background-color: #ecb401;
+    color: black;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: 5px solid;
+    border-color: #d19d01;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 15px;
+    border-bottom-left-radius: 20px;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px; 
+    border-top-left-radius: 20px;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1; 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888; 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555; 
+}
+legend, label {
+    text-align: left;
+}
+
+.welldone{
+    color:white;
+}
+
+.goToHome{
+    color:#ecb401;
+    font:italic small-caps bold 22px/40px Georgia, serif;
+}
+
+textarea{
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    text-align: left;
+}
+
+.details, #text-align-left,.confirmation{
+    text-align: left;
+    
+}
+
+.draft {
+    margin: 0 auto;
+    height: auto;
+    width: 600px;
+    padding: 20px;
+    color: #ffffff;
+    word-wrap: break-word;
+}
+

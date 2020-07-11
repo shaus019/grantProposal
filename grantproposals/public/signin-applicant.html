@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+
+<!-- Sign in  -->
+<html ng-app="GrantApp">
+    <head>
+        <title>Sign in (applicant)</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="js/angular.min.js"></script>
+        <script src="js/angular-resource.min.js"></script>
+        <script src="js/ngStorage.min.js"></script>
+        <script src="js/grant.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+        <link rel = "stylesheet" type = "text/css" href = "css/style.css" />
+    </head>
+    <body ng-controller="ApplicantController as appCtrl" >
+        <div ng-include="'menu.html'" ></div>
+        
+        <div id="signin">
+            <h1>Sign in As Applicants</h1>
+            <form ng-submit="appCtrl.signIn(username,password)">
+                <hr>
+                <input placeholder="username" type="text" ng-model="username" required>
+
+                <input  placeholder="password" type="password" ng-model="password" required>
+
+                <button type="submit">Sign in</button>
+                <hr>
+            </form> 
+        </div>
+        
+    </body>
+</html>

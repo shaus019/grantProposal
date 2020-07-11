@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html ng-app="GrantApp">
+    <head>
+        <title>Research Grant Application Form</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+         <script src="js/angular.min.js"></script>
+        <script src="js/angular-resource.min.js"></script>
+        <script src="js/ngStorage.min.js"></script>
+        <script src="js/grant.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <link rel = "stylesheet" type = "text/css" href = "css/style.css" />
+    </head>
+    <body ng-controller="ApplicantController as applicantCtrl" ng-init="applicantCtrl.checkSignIn()">
+        <div ng-include="'menu.html'" ></div>
+        <div id="grantList">
+        <header>
+        <h1>Research Grant Application Form</h1>
+        </header>
+        <form method="post" ng-controller="ApplicationController as appCtrl">
+            
+            <fieldset>
+                <legend>CONTACT DETAILS</legend>
+                <ul  >
+                <li><label>Name</label><input type="text" size="30" ng-model="applicantCtrl.name" ></li>
+                <li><label>Department</label><input type="text" size="30" ng-model="applicantCtrl.department"  ></li>
+                <li><label>Telephone</label><input type="text" size="30" ng-model="applicantCtrl.telephone" ></li>
+                <li><label>Email</label><input type="email" size="30" ng-model="applicantCtrl.email" ></li>
+                <li><label>Date</label><input type="date" size="30" ng-model="application.date" required ></li> 
+                
+                </ul>
+            </fieldset>
+            
+
+                     <fieldset>
+                <legend>RESEARCH DETAILS</legend>
+                <ul class="details">
+    <li><label>Project Title</label><input id="text-align-left" type="text" size="30" ng-model="application.projectTitle" required ng-hide="editorEnabled">
+    <div class="draft" ng-show="editorEnabled">{{ application.projectTitle }}</div></li>
+    
+    <li><label>Abstract</label><textarea rows="4" cols="30" ng-model="application.projectAbstract" required ng-hide="editorEnabled" ></textarea>
+    <div class="draft" ng-show="editorEnabled">{{ application.projectAbstract }}</div></li>
+    
+    <li><label>Product/Service Description</label><textarea rows="4" cols="30" ng-model="application.description" required ng-hide="editorEnabled"></textarea>
+    <div class="draft" ng-show="editorEnabled">{{ application.description }}</div></li>
+    
+    <li><label>How is your Idea/Technology Unique</label><textarea rows="4" cols="30" ng-model="application.uniqueness" required ng-hide="editorEnabled" ></textarea>
+    <div class="draft" ng-show="editorEnabled">{{ application.uniqueness }}</div></li>
+ 
+    <li><label>What Work have you undertaken to date?</label><textarea rows="4" cols="30" ng-model="application.undertakenWork" required ng-hide="editorEnabled"></textarea>
+        <div class="draft" ng-show="editorEnabled">{{ application.undertakenWork }}</div></li>
+ 
+    <li><label>Proof of Concept Required</label><textarea rows="4" cols="30" ng-model="application.conceptProof" required ng-hide="editorEnabled"></textarea>
+            <div class="draft" ng-show="editorEnabled">{{ application.conceptProof }}</div></li>
+ 
+    <li><label>What is the thing that would be sold/used?</label><textarea rows="4" ng-model="application.soldOrUsed" cols="30" required ng-hide="editorEnabled"></textarea>
+        <div class="draft" ng-show="editorEnabled">{{ application.soldOrUsed }}</div></li>
+ 
+    <li><label>Who in your opinion would buy this product or service? </label><textarea rows="4" cols="30" ng-model="application.opinion" required ng-hide="editorEnabled"></textarea>
+            <div class="draft" ng-show="editorEnabled">{{ application.opinion }}</div></li>
+ 
+    <li><label>Why would they buy this product or service? (150 words)</label><textarea rows="4" cols="30" ng-model="application.whyBuy" required ng-hide="editorEnabled"></textarea>
+            <div class="draft" ng-show="editorEnabled">{{ application.whyBuy }}</div></li>
+ 
+    <li><label>In your estimation how long until the product or service would be ready to sell? </label><textarea rows="4" cols="30" ng-model="application.estimation" required ng-hide="editorEnabled" ></textarea>
+            <div class="draft" ng-show="editorEnabled">{{ application.estimation }}</div></li>
+ 
+ 
+             
+             
+                    
+                </ul>
+       
+ 
+            </fieldset> 
+         
+    <button type="submit" ng-show="editorEnabled" title="Edit" data-ng-click="edit()">edit</button>
+    <button type="submit"  ng-hide="editorEnabled" data-ng-click="confirm()" >Save as Draft</button>
+    <button type="submit" ng-click="appCtrl.submit(application)">Submit</button>
+            
+            
+                
+                
+            
+        </form>
+            
+        
+       
+        <footer>--- info310 project---</footer>
+        </div>
+    </body>
+</html>

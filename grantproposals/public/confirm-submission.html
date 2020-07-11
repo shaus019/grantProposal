@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html ng-app="GrantApp">
+    <head>
+        <title>Confirm application</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="js/angular.min.js"></script>
+        <script src="js/angular-resource.min.js"></script>
+        <script src="js/ngStorage.min.js"></script>
+        <script src="js/grant.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+        <link rel = "stylesheet" type = "text/css" href = "css/style.css" />
+    </head>
+
+  
+    <body ng-controller="ApplicationController as appCtrl" class="text-center" >
+        <div ng-include="'menu.html'" ></div>
+        <div id="grantList">
+        <div class="confirmation" ng-repeat="(key, value) in appCtrl.application">
+            <ul>
+                <li><h3>{{key}}</h3></li>
+                <li><p>{{value}}</p></li>
+            </ul>
+        </div>
+              
+       <button class="goBack" data-ng-click="goBack(application)">Go Back!</button>
+
+        <form action="confirm-password.html">
+            <input type="submit" value="Submit"/>
+        </form>
+        </div>
+    </body>
+</html>
+
+
+
+
+
+
+

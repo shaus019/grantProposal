@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html ng-app="GrantApp">
+    <head>
+        <title>View Grants</title>
+        <meta charset="windows-1252">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="js/angular.min.js"></script>
+        <script src="js/angular-resource.min.js"></script>
+        <script src="js/ngStorage.min.js"></script>
+        <script src="js/grant.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+        <link rel = "stylesheet" type = "text/css" href = "css/style.css" />
+    </head>
+    <body ng-controller="GrantController as grantCtrl">
+        <div ng-include="'menu.html'" ></div>
+        <div id="grantList">
+        <h1>Grants</h1> 
+ 
+                
+                
+                <table ng-controller="ApplicationController as appCtrl">
+                        <tr>
+                            <th>Grant ID</th>
+                            <th>Name of Grant</th>
+                            <th>Department</th>
+                            <th>Amount of Grant</th>
+                            <th>Due Date</th>
+                            <th></th>
+                        </tr>
+                    <tr ng-repeat="grant in grantCtrl.grants">
+                        <td>{{grant.grantId}}</td>
+                        <td>{{grant.name}}</td>
+                        <td>{{grant.department}}</td>
+                        <td>{{grant.amount}}</td>
+                        <td>{{grant.dueDate}}</td>
+                        <td>
+                            <button id="apply" ng-click="appCtrl.view(grant)"> View Applications </button>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+    </body>
+</html>

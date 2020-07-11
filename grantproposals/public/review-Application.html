@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html ng-app="GrantApp">
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="windows-1252">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="js/angular.min.js"></script>
+        <script src="js/angular-resource.min.js"></script>
+        <script src="js/ngStorage.min.js"></script>
+        <script src="js/grant.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+        <link rel = "stylesheet" type = "text/css" href = "css/style.css" />
+    </head>
+    <body ng-controller="EvaluatorController as evalCtrl"  ng-init="evalCtrl.checkSignIn()">
+        <div ng-controller="ApplicationController as appCtrl">
+        <div ng-include="'menu.html'" ></div>
+        <div id="grantList">
+        <div class="confirmation" ng-repeat="(key, value) in appCtrl.selectedApplication">
+            <ul>
+                <li><h3>{{key}}</h3></li>
+                <li><p>{{value}}</p></li>
+            </ul>
+        </div>
+        
+        <div ng-controller="ProposalController as propCtrl">  
+                    <button id="apply" ng-click="propCtrl.selectApplicationProposalView(appCtrl.selectedApplication.applicationId)">Open Proposal</button>
+         </div>
+               
+
+        <form method="post" >
+            
+            <fieldset>
+                <legend>Evaluator Details</legend>
+                <ul class="details">
+                <li><label>Name</label><input type="text" size="30" ng-model="evalCtrl.username"></li>
+                <li><label>Department</label><input type="text" size="30" ng-model="evalCtrl.department"></li>
+                <li><label>Email</label><input type="text" size="30" ng-model="evalCtrl.email"></li>
+                
+                </ul>
+                
+            
+               </fieldset>
+                    
+                <fieldset>
+                <legend>Evaluation Comments</legend>
+                <ul class="details">
+                <li><label>Comments</label><textarea rows="4" cols="30" type="text" size="30" ng-model="evaluation.comments"></textarea></li>
+                <li><label>Application New Status</label><select ng-model="evaluation.status">
+                <option ng-repeat="stat in status">{{stat}}</option>
+                    </select></li>
+                
+                </ul>
+                
+                
+                
+            
+            </fieldset>      
+            
+            
+                
+
+                </form>
+<button type="submit" ng-click="appCtrl.submitEvaluation(evaluation)">Submit</button>
+        </div>
+        </div>
+    </body>
+</html>
